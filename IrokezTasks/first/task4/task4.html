@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function () {
+        var btn = document.getElementById("btn");
+            function go() {
+               var number = document.getElementById("mainNumber").value;
+               var arr = [];
+               for ( var i = 0; i < number; i++ ) {
+                  
+                  arr.push( Math.round ( Math.random() * 100 ) );
+               }
+              
+               var bigest = Math.max.apply(Math, arr);
+               
+               var small = Math.min.apply(Math, arr);
+               
+               alert( `Рандомные числа ${arr}` );
+               alert( `Наибольшее число из Рандома  ${bigest} , наименьшее число из Рандома  ${small}`)
+               
+               var revers = [bigest, small];
+               revers.reverse();
+               
+               alert(`было: ${bigest},${small}, стало: ${revers}`);
+               
+               
+            }
+         
+            btn.addEventListener("click", go)
+         }
+    </script>
+</head>
+<body>
+    <input id="mainNumber">
+    <button id="btn">click</button>
+</body>
+</html>

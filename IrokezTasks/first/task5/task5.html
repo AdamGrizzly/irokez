@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function go(){
+            var input = document.getElementById('FIO').value
+            alert(input)
+            var pieces = input.split(' ');
+            for ( var i = 0 ; i < pieces.length ; i++ ) {
+                if( i === 2){
+                    var name = pieces[0];
+                    var fam = pieces[1]
+                    alert(pieces[2].toUpperCase()+" "+name.charAt(0).toLowerCase()+'. '+ fam.charAt(0).toLowerCase()+'. ')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="FIO" type="text" onchange="go()" placeholder="Введите свое ФИО">
+</body>
+</html>

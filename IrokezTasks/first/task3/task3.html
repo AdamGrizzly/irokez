@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function () {
+            var btn = document.getElementById("btn");
+                function lets() {
+                    var firstNum = document.getElementById("firstNum").value;
+                    var secondNum = document.getElementById("secondNum").value;
+                    var division = document.getElementById("division").value;
+        
+                    var arr = secondNum.split(",");
+        
+                    arr.splice(0,0, firstNum);
+        
+                    var arrNum = arr.map(function (array) {
+                        return +array;
+                    })
+                    var result = [];
+                    
+                    for (var i = arrNum[0]; i <= arrNum[1]; i++) {
+                        result.push(i);
+                    }
+                    
+                    var ost = [];
+                    for ( var j =0; j < result.length; j++ ) {
+                        if ( result[j] % division == 0 ) {
+                            ost.push(result[j]);
+                        }
+                    }
+                    
+                    var sum = 0;
+                    for ( var k = 0; k < ost.length; k++ ) {
+                        sum += ost[k];
+                    }
+                    alert(ost + `- эти числа делятся на ${division} без остатка`)
+                    alert(sum + " - это сумма чисел!")
+                }
+            btn.addEventListener("click", lets)
+        
+        }
+        </script>
+</head>
+<body>
+    <input type="text" id="firstNum">
+    <input type="text" id="secondNum">
+    <input type="text" id="division">
+    <button id="btn">Поехали</button>
+</body>
+</html>
